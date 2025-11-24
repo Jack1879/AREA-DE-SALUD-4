@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clasificación de TRIAGE</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        padding-top: 40px;
+    }
+    section {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        width: 330px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+        text-align: center;
+    }
+    input {
+        padding: 8px;
+        width: 85%;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        margin: 6px 0;
+        font-size: 16px;
+    }
+    button {
+        padding: 10px 20px;
+        background: #0078ff;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+    button:hover {
+        background: #005fcc;
+    }
+    .output {
+        margin-top: 15px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+<section id="e4">
+<h3>Clasificación TRIAGE</h3>
+<p>Códigos: 1=Rojo, 2=Amarillo, 3=Verde, 4=Azul</p>
+<input type="number" id="tr" placeholder="Código">
+<button onclick="ej4()">Clasificar</button>
+<div class="output" id="out4"></div>
+</section>
+<script>
+function ej4() {
+    let c = parseInt(document.getElementById("tr").value);
+    let cat = "";
+    switch (c) {
+        case 1: cat = "Rojo (Emergencia)"; break;
+        case 2: cat = "Amarillo (Urgencia)"; break;
+        case 3: cat = "Verde (Prioridad baja)"; break;
+        case 4: cat = "Azul (No urgente)"; break;
+        default: cat = "Código inválido"; break;
+    }
+    document.getElementById("out4").innerText = "Categoría: " + cat;
+}
+</script>
+</body>
+</html>
